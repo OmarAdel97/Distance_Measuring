@@ -1,0 +1,38 @@
+ /******************************************************************************
+ *
+ * Module: Ultrasonic
+ *
+ * File Name: ultrasonic.c
+ *
+ * Description: Source file for the Ultrasonic driver
+ *
+  * Author: Omar Adel
+ *
+ *******************************************************************************/
+
+#include "gpio.h"
+#include "icu.h"
+#include "ultrasonic.h"
+#include "common_macros.h" /* To use the macros like SET_BIT */
+
+
+void Ultrasonic_init(void){
+	Icu_ConfigType config = {F_CPU_8,RISING};
+	Icu_init(&config);
+	Icu_setCallBack(Ultrasonic_edgeProcessing);
+	GPIO_setupPinDirection(PORTB_ID, PIN5_ID, PIN_OUTPUT);
+	GPIO_setupPinDirection(PORTD_ID, PIN6_ID, PIN_INPUT);
+
+}
+
+void Ultrasonic_Trigger(void){
+
+}
+
+uint16 Ultrasonic_readDistance(void){
+
+}
+
+void Ultrasonic_edgeProcessing(void){
+
+}

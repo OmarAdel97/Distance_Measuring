@@ -1,0 +1,36 @@
+ /******************************************************************************
+ *
+ * Module: Ultrasonic
+ *
+ * File Name: ultrasonic.h
+ *
+ * Description: Header file for the Ultrasonic driver
+ *
+  * Author: Omar Adel
+ *
+ *******************************************************************************/
+
+#ifndef ULTRASONIC_H_
+#define ULTRASONIC_H_
+
+#include "std_types.h"
+
+
+
+void Ultrasonic_init(void);
+
+void Ultrasonic_Trigger(void);
+/*
+  * Description : Function to read the distance to the object.
+  * 	1. Use the Trigger function to send a pulse
+  * 	2. Polling till the time of the echo is calculated
+  * 	3. Calculate the distance.
+  */
+uint16 Ultrasonic_readDistance(void);
+/*
+  * Description : Function to setup the call back function
+  * 	Calculate the time taken for the edge to rise and then fall.
+  */
+void Ultrasonic_edgeProcessing(void);
+
+#endif /* ULTRASONIC_H_ */

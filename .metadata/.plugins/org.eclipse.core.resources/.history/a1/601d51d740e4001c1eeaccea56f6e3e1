@@ -1,0 +1,23 @@
+ /******************************************************************************
+ *
+ * Module: Ultrasonic
+ *
+ * File Name: ultrasonic.h
+ *
+ * Description: Header file for the Ultrasonic driver
+ *
+  * Author: Omar Adel
+ *
+ *******************************************************************************/
+
+#ifndef ULTRASONIC_H_
+#define ULTRASONIC_H_
+
+#include "std_types.h"
+
+uint8 g_edgeCount = 0;
+	uint16 g_timeHigh = 0;
+	uint16 g_timePeriod = 0;
+	uint16 g_timePeriodPlusHigh = 0;
+
+#endif /* ULTRASONIC_H_ */

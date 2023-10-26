@@ -1,0 +1,28 @@
+/*
+ ================================================================================================
+ Name        : Mini_Project_4.c
+ Author      : Omar Adel
+ Description : ULTRASONIC SENSOR
+ Date        : 04/06/2022
+ ================================================================================================
+ */
+
+#include "lcd.h"
+#include "ultrasonic.h"
+
+
+
+while(1)
+	{
+		if(g_edgeCount == 4)
+		{
+			Icu_DeInit(); /* Disable ICU Driver */
+			g_edgeCount = 0;
+			LCD_displayString("Period = ");
+			/* calculate the period */
+			period = ((g_timePeriodPlusHigh - g_timeHigh) / 1000);
+			/* display the period on LCD screen */
+			LCD_intgerToString(period);
+			LCD_displayString(" MiliS");
+		}
+	}

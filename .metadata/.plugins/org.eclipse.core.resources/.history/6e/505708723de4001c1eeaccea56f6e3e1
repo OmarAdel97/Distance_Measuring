@@ -1,0 +1,15 @@
+ /******************************************************************************
+ *
+ * Module: Ultrasonic
+ *
+ * File Name: ultrasonic.c
+ *
+ * Description: Source file for the Ultrasonic driver
+ *
+  * Author: Omar Adel
+ *
+ *******************************************************************************/
+
+#include "icu.h"
+#include "ultrasonic.h"
+#include "common_macros.h" /* To use the macros like SET_BIT */

@@ -1,0 +1,29 @@
+ /******************************************************************************
+ *
+ * Module: Ultrasonic
+ *
+ * File Name: ultrasonic.h
+ *
+ * Description: Header file for the Ultrasonic driver
+ *
+  * Author: Omar Adel
+ *
+ *******************************************************************************/
+
+#ifndef ULTRASONIC_H_
+#define ULTRASONIC_H_
+
+#include "std_types.h"
+
+extern uint8 g_edgeCount = 0;
+extern uint16 g_timeHigh = 0;
+
+
+void Ultrasonic_init(void);
+
+void Ultrasonic_Trigger(void);
+
+uint16 Ultrasonic_readDistance(void);
+void Ultrasonic_edgeProcessing(void);
+
+#endif /* ULTRASONIC_H_ */

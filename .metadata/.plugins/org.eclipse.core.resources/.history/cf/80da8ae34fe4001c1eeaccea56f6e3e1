@@ -1,0 +1,47 @@
+ /******************************************************************************
+ *
+ * Module: Ultrasonic
+ *
+ * File Name: ultrasonic.h
+ *
+ * Description: Header file for the Ultrasonic driver
+ *
+  * Author: Omar Adel
+ *
+ *******************************************************************************/
+
+#ifndef ULTRASONIC_H_
+#define ULTRASONIC_H_
+
+#include "std_types.h"
+
+
+/*
+  * Description : Function to initialize the Ultrasonic driver
+  * 	1. Initialize the ICU configuration
+  * 	2. Initialize the ICU
+  * 	3. Initialize the call back function
+  * 	4. Setup the Trigger PIN 6 in PORT B to be OUTPUT
+  */
+void Ultrasonic_init(void);
+/*
+  * Description : Function to Trigger the Ultrasonic pulse
+  * 	1. Give a trigger pulse to the the trigger pin in the sensor
+  * 	2. wait for 10 us
+  * 	3. remove the pulse.
+  */
+void Ultrasonic_Trigger(void);
+/*
+  * Description : Function to read the distance to the object.
+  * 	1. Use the Trigger function to send a pulse
+  * 	2. Polling till the time of the echo is calculated
+  * 	3. Calculate the distance.
+  */
+uint16 Ultrasonic_readDistance(void);
+/*
+  * Description : Function to setup the call back function
+  * 	Calculate the time taken for the edge to rise and then fall.
+  */
+void Ultrasonic_edgeProcessing(void);
+
+#endif /* ULTRASONIC_H_ */
